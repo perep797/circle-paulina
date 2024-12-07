@@ -1,0 +1,253 @@
+html {
+    box-sizing: border-box;
+}
+*,*:before,*:after {
+    box-sizing:inherit;
+}
+
+body {
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: linear-gradient(to bottom right, #357de8, #96d1ec)
+}
+
+body::-webkit-scrollbar {
+    width: 1rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #2b910f;
+}
+
+body::-webkit-scrollbar-track {
+    background: #145b15;
+}
+
+
+/* banner stuff, it's a mess */
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-width: fit-content;
+    max-width: 1100px;
+    margin-top: 1.5%;
+    margin-inline: auto;
+    background-image: url('place/banner.jpg');
+    animation: border-animate 4s linear infinite alternate;
+}
+
+@keyframes border-animate {
+    0% { border: dotted  #bd730c; }
+    50% { border: dashed #2b910f; }
+    100% { border: solid #0c3e10; }
+}
+
+.bimg-container {
+    list-style-type: none;
+    flex-direction: column;
+    align-content: center;
+    margin: 0.5%;
+    padding: 0;
+}
+
+.bimg{
+    flex: 1;
+    position: relative;
+}
+
+#button-1 {
+    position: absolute;
+}
+
+#button-1:hover {
+    opacity: 0;
+}
+
+#title-container {
+    flex: 4;
+    align-content: center;
+    padding: 0.5;
+}
+
+#title {
+    animation: rainbow 4s linear infinite;
+    text-align: center;
+    font-size: 30px;
+    background-color: rgba(39, 163, 20, 0.5);
+    border: groove rgb(236, 123, 75);
+    margin-inline: 5%;
+}
+
+@keyframes rainbow {
+    0% { color: #ff0000; }
+    12.5% { color: #FF7F00; }
+    25% { color: #FFFF00; }
+    37.5% { color: #00FF00; }
+    50% { color: #058b30; }
+    62.5% { color: #00bbff; }
+    75% { color: #0008ff; }
+    87.5% { color: #5f00dc; }
+    100% { color: #ff049a; }
+}
+
+/* divider stuff, still a mess */
+
+.divider-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.divider-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#treel {
+    height: 48px;
+    width: 48px;
+    float: left;
+}
+
+#treer {
+    height: 48px;
+    width: 48px;
+    float: right;
+}
+
+.divider-text {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 18px;
+    font-weight: bold;
+    color: seashell;
+    background-color: rgba(39, 163, 20, 0.5);
+    backdrop-filter: blur(5px);
+    border: dotted #bd730c;
+    padding: 2px;
+    text-align: center;
+}
+
+.divider-text:hover {
+    animation: rainbow 4s linear infinite;
+}
+
+#bgbutton {
+    margin-top: 20px;
+    margin-bottom: 14px;
+}
+
+
+/* main body */
+
+.main-body {
+    gap: 1%;
+    padding: 0.5%;
+}
+
+p {
+    border:2px dotted #bd730c;
+    color: seashell;
+    background-color: rgba(39, 163, 20, 0.5);
+    backdrop-filter: blur(5px);
+    letter-spacing: 0.75px;
+    line-height: 35px;
+    padding: 5px;
+}
+
+h2 {
+    border:2px dotted #096310;
+    color: seashell;
+    background-color: rgba(255, 138, 4, 0.562);
+    backdrop-filter: blur(5px);
+    letter-spacing: 0.75px;
+    line-height: 35px;
+    padding: 10px;
+    width: fit-content;
+}
+
+h2 img{
+    height: 35px;
+}
+
+.text-container {
+    grid-area: text;
+}
+
+.image-container-1 {
+    grid-area: images-1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.image-container-2 {
+    grid-area: images-2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.img-wrapper {
+    max-width: 100vw;
+    justify-content: space-evenly;
+}
+
+.image-container-1 img{
+    padding: 5px;
+    height: auto;
+    width: 30vw;
+}
+
+.image-container-2 img{
+    padding: 5px;
+    height: auto;
+    width: 30vw;
+}
+
+/* Nighttime stuff */
+
+body.nighttime {
+    background-image: linear-gradient(to bottom right, #0a0c0e, #16202e);
+}
+
+body.nighttime .banner {
+    background-image: url(place/bannernight.jpg);
+    animation: border-animate-night 4s linear infinite alternate;
+}
+
+body.nighttime #title{
+    background-color: rgba(236, 123, 75, 0.253);
+    border: groove rgb(222, 187, 12);
+    backdrop-filter: blur(2px);
+}
+
+@keyframes border-animate-night {
+    0% { border: dotted  #11455c; }
+    50% { border: dashed #202668; }
+    100% { border: solid #bd730c; }
+}
+
+body.nighttime .divider-text {
+    color: rgb(222, 187, 12);
+    background-color:rgba(55, 68, 133, 0.5);
+    border: dotted #bd730c;
+}
+
+body.nighttime h2 {
+    background-color: rgba(236, 123, 75, 0.253);
+    border: 2px dotted #11455c;
+    color: rgb(222, 187, 12);
+}
+
+body.nighttime p {
+    background-color: rgba(55, 68, 133, 0.5);
+    border: 2px dotted #bd730c;
+    color: rgb(222, 187, 12);
+}
+
